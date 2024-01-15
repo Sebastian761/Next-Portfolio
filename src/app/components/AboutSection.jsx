@@ -8,13 +8,13 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2">
+      <ul className="list-disc pl-2 pt-2">
         <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
-        <li>JavaScript</li>
         <li>React</li>
+        <li>PostgreSQL</li>
+        <li>Postman</li>
+        <li>JavaScript</li>
+        <li>Express</li>
       </ul>
     ),
   },
@@ -22,9 +22,10 @@ const TAB_DATA = [
     title: "Education",
     id: "education",
     content: (
-      <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+      <ul className="list-disc pl-2 pt-2">
+        <li>Fullstack Codo A Codo 2022</li>
+        <li>No country Team Projects 2023</li>
+        <li>Pearson English Academy</li>
       </ul>
     ),
   },
@@ -32,9 +33,9 @@ const TAB_DATA = [
     title: "Certifications",
     id: "certifications",
     content: (
-      <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+      <ul className="list-disc pl-2 pt-2">
+        <li>CaC Fullstack Java</li>
+        <li>CaC react specialization</li>
       </ul>
     ),
   },
@@ -62,12 +63,7 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+          Hello there! I&apos;m Sebastian Ocando, a passionate web developer with a focus on React.js. My journey in the vast world of web development has been nothing short of exhilarating, and I&apos;m thrilled to share my experiences and creations with you.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton

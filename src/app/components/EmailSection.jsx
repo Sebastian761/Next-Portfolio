@@ -4,40 +4,30 @@ import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { Toaster, toast } from "sonner";
+
 
 const EmailSection = () => {
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const form = useRef();
 
-  const handleSubmit = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
-    };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
 
-    // Form the request for sending data to the server.
-    const options = {
-      // The method is POST because we are sending data.
-      method: "POST",
-      // Tell the server we're sending JSON.
-      headers: {
-        "Content-Type": "application/json",
+    emailjs.sendForm("service_o977vpp", "template_6afegw5", form.current,
+    "Zd5Zd06pmbUuz3ANy")
+    .then(
+      (result) => {
+        toast.success('Message sent successfully')
+        form.current.reset()
       },
-      // Body of the request is the JSON data we created above.
-      body: JSONdata,
-    };
+      (error) => {
+        toast.error('Error sending the message')
+      }
+    )
 
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
-
-    if (response.status === 200) {
-      console.log("Message sent.");
-      setEmailSubmitted(true);
-    }
-  };
+  }
 
   return (
     <section
@@ -56,21 +46,16 @@ const EmailSection = () => {
           try my best to get back to you!
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href="github.com">
+          <Link href="https://github.com/Sebastian761" target="blank">
             <Image src={GithubIcon} alt="Github Icon" />
           </Link>
-          <Link href="linkedin.com">
+          <Link href="https://www.linkedin.com/in/sebastian-ocando-vivas-306a7a249/" target="blank">
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
           </Link>
         </div>
       </div>
       <div>
-        {emailSubmitted ? (
-          <p className="text-green-500 text-sm mt-2">
-            Email sent successfully!
-          </p>
-        ) : (
-          <form className="flex flex-col" onSubmit={handleSubmit}>
+          <form className="flex flex-col" ref={form} onSubmit={sendEmail}>
             <div className="mb-6">
               <label
                 htmlFor="email"
@@ -79,12 +64,12 @@ const EmailSection = () => {
                 Your email
               </label>
               <input
-                name="email"
+                name="user_email"
                 type="email"
                 id="email"
                 required
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="jacob@google.com"
+                placeholder="example@google.com"
               />
             </div>
             <div className="mb-6">
@@ -95,7 +80,7 @@ const EmailSection = () => {
                 Subject
               </label>
               <input
-                name="subject"
+                name="user_name"
                 type="text"
                 id="subject"
                 required
@@ -117,6 +102,7 @@ const EmailSection = () => {
                 placeholder="Let's talk about..."
               />
             </div>
+            <Toaster position="bottom-right" richColors/>
             <button
               type="submit"
               className="bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
@@ -124,7 +110,6 @@ const EmailSection = () => {
               Send Message
             </button>
           </form>
-        )}
       </div>
     </section>
   );

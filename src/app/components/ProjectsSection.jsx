@@ -11,8 +11,8 @@ const projectsData = [
     description: "Web portfolio using nextjs and framer motion",
     image: "/images/projects/project-4.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/Sebastian761/Next-Portfolio",
+    previewUrl: "https://sebastian-ocando.vercel.app/",
   },
   {
     id: 2,
@@ -20,8 +20,8 @@ const projectsData = [
     description: "Website of a construction company that offers its services",
     image: "/images/projects/project-2.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/Sebastian761/SuccesBuild-FL",
+    previewUrl: "https://success-build-fl.vercel.app/",
   },
   {
     id: 3,
@@ -29,8 +29,8 @@ const projectsData = [
     description: "Website of NGO that is in charge of finding homes for animals for adoption.",
     image: "/images/projects/project-3.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/No-Country/c15-29-ft-react-java",
+    previewUrl: "https://pawfinders.vercel.app/",
   },
   {
     id: 4,
@@ -38,8 +38,8 @@ const projectsData = [
     description: "Web for home painting and repair company",
     image: "/images/projects/project-1.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/Sebastian761/Vanities-and-Sinks",
+    previewUrl: "https://vanities-and-sinks.vercel.app/",
   }
 ];
 
